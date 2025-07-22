@@ -1,0 +1,6 @@
+#ifndef _VECTOR_DINAMICO_H
+#define _VECTOR_DINAMICO_H
+
+
+
+#endif _VECTOR_DINAMICO_H
