@@ -19,7 +19,7 @@ void generar_terreno(Terreno_t terreno);
 
 const Terreno_t* inicializar_terreno();
 
-void destruir_terreno(Terreno_t terreno);
+void destruir_terreno(Terreno_t* terreno);
 
 /*
 //pre: el tamaño debe ser acorde a la pantalla para una mejor apreciacion

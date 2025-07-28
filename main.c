@@ -9,12 +9,11 @@
 */
 int main(int argc, char* argv[]){
     if (argc > 4 || argc < 4){
-        printf("Verificar cantidad de entradas\n");
+        printf("Verificar cantidad de entradas.\n");
         return 1;
     }
 
-    Terreno_t* terreno_sopa = NULL;
-    terreno_sopa = inicializar_terreno();
+    Terreno_t* terreno_sopa = inicializar_terreno();
 
     int tamaño_en_x =atoi(argv[1]);
     int tamaño_en_y =atoi(argv[2]);
