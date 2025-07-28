@@ -6,6 +6,7 @@
 #include <time.h>
 #include <string.h>
 
+
 void generar_terreno(){
 
 }
