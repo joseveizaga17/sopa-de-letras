@@ -5,6 +5,8 @@
 #define TAMAÑO_X 20
 #define CANTIDAD_DIMENSIONES 2
 
+typedef struct Terreno_t Terreno_t;
+
 /*
 idea:
 puedo tambien extender el juego. Escribir las posiciones de las letras(porque no las puedo 
@@ -12,10 +14,12 @@ remarcar y/o pintar) mandarlas por input y que alguna funcion las valide y de po
 */
 
 //post: muestra por pantalla(imprime) el terreno bidimensional con las letras
-void generar_terreno(char terreno[TAMAÑO_X][TAMAÑO_Y]);
+void generar_terreno(Terreno_t terreno);
 
 
-char* inicializar_terreno();
+const Terreno_t* inicializar_terreno();
+
+void destruir_terreno(Terreno_t terreno);
 
 /*
 //pre: el tamaño debe ser acorde a la pantalla para una mejor apreciacion
