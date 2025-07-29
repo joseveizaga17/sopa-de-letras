@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        //"SOPA_DE_LETRAS.C": "cpp",
-        //"VECTOR_DINAMICO.C": "cpp"
+        "stdlib.h": "c",
+        "stdio.h": "c"
     }
 }
