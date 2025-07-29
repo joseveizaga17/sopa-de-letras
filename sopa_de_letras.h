@@ -1,5 +1,5 @@
-#ifndef _SOPA_DE_LETRAS_H
-#define _SOPA_DE_LETRAS_H
+#ifndef _sopa_de_letras_h
+#define _sopa_de_letras_h
 
 #define TAMAÑO_Y 20
 #define TAMAÑO_X 20
@@ -14,10 +14,10 @@ remarcar y/o pintar) mandarlas por input y que alguna funcion las valide y de po
 */
 
 //post: muestra por pantalla(imprime) el terreno bidimensional con las letras
-void generar_terreno(Terreno_t terreno);
+void imprimir_terreno(Terreno_t* terreno);
 
 
-const Terreno_t* inicializar_terreno();
+Terreno_t* inicializar_terreno(int tamaño_en_x, int tamaño_en_y);
 
 void destruir_terreno(Terreno_t* terreno);
 
@@ -39,4 +39,4 @@ char* pedir_palabra();
 
 
 
-#endif // _SOPA_DE_LETRAS_H
+#endif // _sopa_de_letras_h
