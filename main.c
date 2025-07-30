@@ -13,8 +13,11 @@ int main(int argc, char* argv[]){
     int tamaño_en_y =atoi(argv[2]);
 
     Terreno_t* terreno_sopa = inicializar_terreno(tamaño_en_x, tamaño_en_y);
+    
+    if (terreno_sopa != NULL){
+        imprimir_terreno(terreno_sopa);
+    }
 
-    imprimir_terreno(terreno_sopa);
     /*
 
     printf("%i %i\n", tamaño_en_x, tamaño_en_y);
