@@ -2,11 +2,7 @@
 #include <stdlib.h>
 #include "sopa_de_letras.h"
 
-/*
-        de momento seran dos implementaciones pendientes, no creo que haya tanta diferencia
-        entre 1: hacer funciones para pedir inputs y 2: meterlos desde la ejecucion del 
-        programa
-*/
+
 int main(int argc, char* argv[]){
     if (argc > 4 || argc < 4){
         printf("Verificar cantidad de entradas.\n");
@@ -18,7 +14,7 @@ int main(int argc, char* argv[]){
 
     Terreno_t* terreno_sopa = inicializar_terreno(tamaño_en_x, tamaño_en_y);
 
-    //imprimir_terreno(terreno_sopa);
+    imprimir_terreno(terreno_sopa);
     /*
 
     printf("%i %i\n", tamaño_en_x, tamaño_en_y);

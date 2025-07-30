@@ -21,11 +21,12 @@ struct Terreno_t{
 
 void imprimir_terreno(Terreno_t* terreno){
 
-    for (int i = 0; i < terreno->tamaño_horizontal; i++){
+    for (int j = 0; j < terreno->tamaño_vertical; j++){
 
-        for (int j = 0; j < terreno->tamaño_vertical; j++){
+        printf("|");
+        for (int i = 0; i < terreno->tamaño_horizontal; i++){
 
-            printf("%c|", terreno->terreno[i][j]);
+            printf(" %c|", terreno->terreno[i][j]);
         }
         printf("\n");
         
@@ -73,7 +74,7 @@ char generar_letras(){
 
 void rellenar_terreno(Terreno_t* sopa){
     for(int i=0; i<sopa->tamaño_horizontal; i++){
-        for(int j=0; i < sopa->tamaño_vertical; j++){
+        for(int j=0; j<sopa->tamaño_vertical; j++){
             sopa->terreno[i][j] = generar_letras();
         }
     }
@@ -86,7 +87,7 @@ Terreno_t* inicializar_terreno(int tamaño_en_x, int tamaño_en_y){
     sopa->tamaño_vertical = tamaño_en_y;
 
     crear_filas_columnas(sopa);
-    //rellenar_terreno(sopa);
+    rellenar_terreno(sopa);
 
     return sopa; ///////////
 

@@ -7,12 +7,6 @@
 
 typedef struct Terreno_t Terreno_t;
 
-/*
-idea:
-puedo tambien extender el juego. Escribir las posiciones de las letras(porque no las puedo 
-remarcar y/o pintar) mandarlas por input y que alguna funcion las valide y de por encontrado 
-*/
-
 //post: muestra por pantalla(imprime) el terreno bidimensional con las letras
 void imprimir_terreno(Terreno_t* terreno);
 
