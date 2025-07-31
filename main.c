@@ -14,18 +14,14 @@ int main(int argc, char* argv[]){
 
     Terreno_t* terreno_sopa = inicializar_terreno(tamaño_en_x, tamaño_en_y);
     
-    if (terreno_sopa != NULL){
-        imprimir_terreno(terreno_sopa);
+    if (terreno_sopa == NULL){
+        printf("Error al crear el juego.\n");
+        return 1;
     }
 
-    /*
-
-    printf("%i %i\n", tamaño_en_x, tamaño_en_y);
-    printf("argc: %i\n", argc);
-    printf("%s\n", argv[3]);
-    */
-    
-    
+    imprimir_terreno(terreno_sopa);
     destruir_terreno(terreno_sopa);
+
+    
     return 0;
 }

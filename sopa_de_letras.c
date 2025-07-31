@@ -36,21 +36,21 @@ void imprimir_terreno(Terreno_t* terreno){
 }
 
 char** fila_inicializar(int tamaño_horizontal){
-    ///verificar errores
     char** arreglo_cascaron = malloc(tamaño_horizontal*sizeof(char*));
 
     return arreglo_cascaron;
 }
 
 char* columna_inicializar(int tamaño_vertical){
-    ///verificar errores
     char* arreglo_elementos = malloc(tamaño_vertical*sizeof(char));
 
     return arreglo_elementos;
 }
 
 char** crear_filas_columnas(int tamaño_horizon, int tamaño_vertic){
-    ///verificar errores
+
+    ///como modularizamos esta funcion? es realmente necesario?
+    
     char** terreno_auxiliar = NULL;
 
     terreno_auxiliar = fila_inicializar(tamaño_horizon);
@@ -60,20 +60,24 @@ char** crear_filas_columnas(int tamaño_horizon, int tamaño_vertic){
     }
 
 
-    //deberia ser while
     int i = 0;
+    int cantidad_incompleta_columnas = 0;
     bool reserva_fallida = false;
     while (i < tamaño_horizon && !reserva_fallida){
 
         terreno_auxiliar[i] = columna_inicializar(tamaño_vertic);
         if (terreno_auxiliar[i] == NULL){
             reserva_fallida = true;
+            cantidad_incompleta_columnas = i;
         }
         i++;
     }
     if (reserva_fallida){
-        //liberar memoria de la fila horizontal y lo que se reservo en la fila vertical
-        //return NULL;
+        for(int j = 0; j<cantidad_incompleta_columnas; j++){
+            free(terreno_auxiliar[j]);
+        }
+        free(terreno_auxiliar);
+        return NULL;
     }
 
 
@@ -120,14 +124,13 @@ Terreno_t* inicializar_terreno(int tamaño_en_x, int tamaño_en_y){
         free(sopa);
         return NULL;
     }
-    //crear_filas_columnas(sopa->tamaño_horizontal, sopa->tamaño_vertical);
+
     rellenar_terreno(sopa);
 
-    return sopa; ///////////
+    return NULL;
 
 }
 
-//lo necesitas como puntero ya que eliminas la variable general despues de eliminar todo el contenido
 void destruir_terreno(Terreno_t* terreno){
     for(int i = 0; i<terreno->tamaño_horizontal; i++){
         free(terreno->terreno[i]);
